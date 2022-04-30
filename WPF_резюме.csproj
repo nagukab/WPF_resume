@@ -37,6 +37,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -56,8 +57,10 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="МоиДанные.cs" />
+    <Compile Include="МоиДополнения.cs" />
     <Compile Include="МоиКонтакты.cs" />
     <Compile Include="МойАдрес.cs" />
+    <Compile Include="МоеОбразование.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -88,6 +91,7 @@
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -100,6 +104,24 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="ИсторияИзменений.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\foto5.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\foto4.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\foto3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\foto2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\foto1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\info.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
