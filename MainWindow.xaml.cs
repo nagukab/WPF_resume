@@ -135,6 +135,7 @@ namespace WPF_резюме
         /// </summary>
         private void Таймер_Elapsed(object sender, ElapsedEventArgs e)
         {
+            таймер.Interval = 3000; // устанавливает основноме время для интервала таймера
             if (отсчет < 5) { отсчет++; }
             else { отсчет = 1; }
             Dispatcher.Invoke(() => { slider_фото.Value = отсчет; });
@@ -184,7 +185,14 @@ namespace WPF_резюме
                 }
             }
         }
+                      
+        private void slider_фото_GotMouseCapture(object sender, MouseEventArgs e)
+        {
+            таймер.Interval = 10000; // делает подлиньше паузу у таймера
+            using (MemoryStream звук = new MemoryStream(Properties.Resources.AutoCastButtonClickwav)) new SoundPlayer(звук).Play();
+        }
 
         #endregion события
+        
     }
 }

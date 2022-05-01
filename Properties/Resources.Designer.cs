@@ -63,6 +63,16 @@ namespace WPF_резюме.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Byte[].
         /// </summary>
+        internal static byte[] AutoCastButtonClickwav {
+            get {
+                object obj = ResourceManager.GetObject("AutoCastButtonClickwav", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Byte[].
+        /// </summary>
         internal static byte[] Errorwav {
             get {
                 object obj = ResourceManager.GetObject("Errorwav", resourceCulture);

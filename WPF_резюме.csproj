@@ -34,6 +34,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>resume.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -97,6 +100,7 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <None Include="Resources\AutoCastButtonClickwav" />
     <None Include="Resources\Errorwav" />
     <None Include="Resources\nHarpwav" />
   </ItemGroup>
@@ -123,6 +127,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\info.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="resume.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
