@@ -98,6 +98,7 @@
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
     <None Include="Resources\Errorwav" />
+    <None Include="Resources\nHarpwav" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

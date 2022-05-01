@@ -121,13 +121,21 @@ namespace WPF_резюме.Properties {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на инфо какое то
-        ///обо 
-        ///  мне.
+        ///   Ищет локализованную строку, похожую на Пока опыт только в рамках самообучения по курсам в интернете на C# в Visual Studio 2022 + написал небольшую программку на WPF для торговли на фондовом рынке через терминал quik. Ищу место где мог бы подтянуть необходимые практические навыки например в качестве ученика/стажера. Для связи можно писать мне на почту xbakugan09@mail.ru или вконтакте https://vk.com/a_vriant . 2022.04.30 решил добавить своё резюме на github https://github.com/nagukab/WPF_resume (в разработке) , может поможет найти работу....
         /// </summary>
         internal static string info {
             get {
                 return ResourceManager.GetString("info", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Byte[].
+        /// </summary>
+        internal static byte[] nHarpwav {
+            get {
+                object obj = ResourceManager.GetObject("nHarpwav", resourceCulture);
+                return ((byte[])(obj));
             }
         }
     }

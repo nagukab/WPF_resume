@@ -38,7 +38,7 @@ namespace WPF_резюме
             textbox_ФИО.Text = моиДанные.МоеФИО();
             //ЗаполнитьТекстБокс(textbox_ФИО, моиДанные.МоеФИО());
             textbox_датаРождения.Text = моиДанные.ДатаРождения.ToString("yyyy-MM-dd");
-           // ЗаполнитьТекстБокс(textbox_датаРождения, моиДанные.ДатаРождения.ToString("yyyy-MM-dd"));
+            // ЗаполнитьТекстБокс(textbox_датаРождения, моиДанные.ДатаРождения.ToString("yyyy-MM-dd"));
             ЗаполнитьАдрес();
             ЗаполнитьОбразование();
             ЗаполнитьКонтакты();
@@ -119,6 +119,14 @@ namespace WPF_резюме
             if (isLoaded && (sender as TextBox).IsReadOnly == false)
             {
                 ЗаполнитьАдрес(); ЗаполнитьОбразование(); ЗаполнитьКонтакты(); ЗвукОшибки();
+            }
+
+            if ((sender as TextBox).IsReadOnly == true && (sender as TextBox).Name == textbox_обоМне.Name && моиДополнения.ОбоМне != null)
+            {
+                progressBar_обоМне.Maximum = моиДополнения.ОбоМне.Length;
+                progressBar_обоМне.Value = (sender as TextBox).Text.Length; // выставить изменить прогресс бара
+                if ((sender as TextBox).Text.Length == моиДополнения.ОбоМне.Length) // когда длинна совпадет, проиграть звук
+                { using (MemoryStream звук = new MemoryStream(Properties.Resources.nHarpwav)) new SoundPlayer(звук).Play(); }
             }
         }
 
