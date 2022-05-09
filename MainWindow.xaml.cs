@@ -1,22 +1,22 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Drawing;
-using System.Globalization;
 using System.IO;
-using System.Linq;
+using System.Drawing;
 using System.Media;
 using System.Resources;
-using System.Text;
 using System.Threading.Tasks;
 using System.Timers;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Input;
+using System.Windows.Media.Imaging;
+using System.Collections;
+using System.Collections.Generic;
+using System.Globalization;
+using System.Linq;
+using System.Text;
 using System.Windows.Data;
 using System.Windows.Documents;
-using System.Windows.Input;
 using System.Windows.Media;
-using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
@@ -35,10 +35,8 @@ namespace WPF_резюме
         public MainWindow()
         {
             InitializeComponent();
-            textbox_ФИО.Text = моиДанные.МоеФИО();
-            //ЗаполнитьТекстБокс(textbox_ФИО, моиДанные.МоеФИО());
-            textbox_датаРождения.Text = моиДанные.ДатаРождения.ToString("yyyy-MM-dd");
-            // ЗаполнитьТекстБокс(textbox_датаРождения, моиДанные.ДатаРождения.ToString("yyyy-MM-dd"));
+            textbox_ФИО.Text = моиДанные.МоеФИО();            
+            textbox_датаРождения.Text = моиДанные.ДатаРождения.ToString("yyyy-MM-dd");            
             ЗаполнитьАдрес();
             ЗаполнитьОбразование();
             ЗаполнитьКонтакты();
@@ -115,14 +113,14 @@ namespace WPF_резюме
         /// событие попытки изменения текста в контактах
         /// </summary>
         private void textbox_Контакты_TextChanged(object sender, TextChangedEventArgs e)
-        {
-            if (isLoaded && (sender as TextBox).IsReadOnly == false)
+        {            
+            if (isLoaded && (sender as TextBox).IsReadOnly == false) // когда попытка изменения происходит после заполнения текстбоксов
             {
                 ЗаполнитьАдрес(); ЗаполнитьОбразование(); ЗаполнитьКонтакты(); ЗвукОшибки();
             }
 
             if ((sender as TextBox).IsReadOnly == true && (sender as TextBox).Name == textbox_обоМне.Name && моиДополнения.ОбоМне != null)
-            {
+            { // когда изменение происходит после инициализации, до включения возможности редактировать текстбокс
                 progressBar_обоМне.Maximum = моиДополнения.ОбоМне.Length;
                 progressBar_обоМне.Value = (sender as TextBox).Text.Length; // выставить изменить прогресс бара
                 if ((sender as TextBox).Text.Length == моиДополнения.ОбоМне.Length) // когда длинна совпадет, проиграть звук
@@ -186,9 +184,13 @@ namespace WPF_резюме
             }
         }
                       
+
+        /// <summary>
+        /// событие воздействия на слайдер мышкой
+        /// </summary>
         private void slider_фото_GotMouseCapture(object sender, MouseEventArgs e)
         {
-            таймер.Interval = 10000; // делает подлиньше паузу у таймера
+            таймер.Interval = 10000; // увеличивает временно интервал у таймера, чтоб фотка не сменилась
             using (MemoryStream звук = new MemoryStream(Properties.Resources.AutoCastButtonClickwav)) new SoundPlayer(звук).Play();
         }
 
