@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPF_резюме"
         mc:Ignorable="d"
-        Title="резюме v_01.9" Height="450" Width="800" MinHeight="450" MinWidth="800">
+        Title="резюме v_02.0" Height="450" Width="800" MinHeight="600" MinWidth="1000">
     <Window.Background>
         <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
             <GradientStop Color="#FF5D5D5D" Offset="1"/>
@@ -14,33 +14,33 @@
     </Window.Background>
     <Grid x:Name="ГлавныйГрид">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="340"/>
-            <ColumnDefinition Width="57*"/>
+            <ColumnDefinition Width="441"/>
+            <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <Grid x:Name="grid_текстИнфо" Width="342" HorizontalAlignment="Center">
+        <Grid x:Name="grid_текстИнфо" Margin="0,0,5,0">
             <Label x:Name="label_текстИнфо" Content="Здравствуйте, Вы просматриваете мой проект &quot;WPF__резюме&quot;" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="Black" FontSize="11"/>
-            <Label x:Name="lable_ФИО" Content="ФИО:" HorizontalAlignment="Left" Margin="10,46,0,0" VerticalAlignment="Top" Padding="0,0,0,0" FontSize="10"/>
-            <TextBox x:Name="textbox_ФИО" HorizontalAlignment="Left" Margin="41,45,0,0" TextWrapping="Wrap" Text="мое фио" VerticalAlignment="Top" FontSize="10" AllowDrop="False" Padding="0,-1,0,1" IsReadOnly="True"/>
-            <Label x:Name="lable_датаРождения" Content="Дата рождения:" HorizontalAlignment="Left" Margin="10,64,0,0" VerticalAlignment="Top" Padding="0,0,0,0" FontSize="10"/>
-            <TextBox x:Name="textbox_датаРождения" HorizontalAlignment="Left" Margin="89,63,0,0" TextWrapping="Wrap" Text="дата рождения" VerticalAlignment="Top" FontSize="10" AllowDrop="False" Padding="0,-1,0,1" IsReadOnly="True"/>
-            <Label x:Name="lable_телефон" Content="телефон:" HorizontalAlignment="Left" Margin="10,202,0,0" VerticalAlignment="Top" Padding="0,0,0,0" FontSize="10"/>
-            <TextBox x:Name="textbox_телефон" HorizontalAlignment="Left" Margin="103,201,0,0" TextWrapping="Wrap" Text="телефон" VerticalAlignment="Top" FontSize="10" AllowDrop="False" Padding="0,-1,0,1" TextChanged="textbox_Контакты_TextChanged" IsReadOnly="True"/>
-            <TextBox x:Name="textbox_почта" HorizontalAlignment="Left" Margin="103,219,0,0" TextWrapping="Wrap" Text="почта" VerticalAlignment="Top" FontSize="10" AllowDrop="False" Padding="0,-1,0,1" TextChanged="textbox_Контакты_TextChanged" IsReadOnly="True"/>
-            <TextBox x:Name="textbox_соцсеть" HorizontalAlignment="Left" Margin="103,237,0,0" TextWrapping="Wrap" Text="соцсеть" VerticalAlignment="Top" FontSize="10" AllowDrop="False" Padding="0,-1,0,1" TextChanged="textbox_Контакты_TextChanged" IsReadOnly="True"/>
-            <Label x:Name="lable_почта" Content="почта:" HorizontalAlignment="Left" Margin="10,220,0,0" VerticalAlignment="Top" Padding="0,0,0,0" FontSize="10"/>
-            <Label x:Name="lable_соцсеть" Content="соцсеть" HorizontalAlignment="Left" Margin="10,238,0,0" VerticalAlignment="Top" Padding="0,0,0,0" FontSize="10"/>
-            <Label x:Name="lable_адрес" Content="адрес:" HorizontalAlignment="Left" Margin="10,184,0,0" VerticalAlignment="Top" Padding="0,0,0,0" FontSize="10"/>
-            <TextBox x:Name="textbox_адрес" HorizontalAlignment="Left" Margin="103,183,0,0" TextWrapping="Wrap" Text="адрес" VerticalAlignment="Top" FontSize="10" AllowDrop="False" Padding="0,-1,0,1" TextChanged="textbox_Контакты_TextChanged" IsReadOnly="True"/>
-            <Label x:Name="lable_специальность" Content="специальность:" HorizontalAlignment="Left" Margin="10,166,0,0" VerticalAlignment="Top" Padding="0,0,0,0" FontSize="10"/>
-            <TextBox x:Name="textbox_специальность" HorizontalAlignment="Left" Margin="103,165,0,0" TextWrapping="Wrap" Text="специальность" VerticalAlignment="Top" FontSize="10" AllowDrop="False" Padding="0,-1,0,1" TextChanged="textbox_Контакты_TextChanged" IsReadOnly="True"/>
-            <Label x:Name="lable_учебноеЗавадение" Content="Учебное заведение" HorizontalAlignment="Left" Margin="10,148,0,0" VerticalAlignment="Top" Padding="0,0,0,0" FontSize="10"/>
-            <TextBox x:Name="textbox_учебноеЗаведение" HorizontalAlignment="Left" Margin="103,147,0,0" TextWrapping="Wrap" Text="Учебное заведение" VerticalAlignment="Top" FontSize="10" AllowDrop="False" Padding="0,-1,0,1" TextChanged="textbox_Контакты_TextChanged" IsReadOnly="True"/>
-            <TextBox x:Name="textbox_образование" HorizontalAlignment="Left" Margin="103,129,0,0" TextWrapping="Wrap" Text="образование" VerticalAlignment="Top" FontSize="10" AllowDrop="False" Padding="0,-1,0,1" TextChanged="textbox_Контакты_TextChanged" IsReadOnly="True"/>
-            <Label x:Name="lable_образование" Content="образование" HorizontalAlignment="Left" Margin="10,130,0,0" VerticalAlignment="Top" Padding="0,0,0,0" FontSize="10"/>
-            <TextBox x:Name="textbox_обоМне" Margin="0,261,0,0" TextWrapping="Wrap" Text="Пока опыт только в рамках самообучения по курсам в интернете на C# в Visual Studio 2022 + написал небольшую программку на WPF для торговли на фондовом рынке через терминал quik. Ищу место где мог бы подтянуть необходимые практические навыки например в качестве ученика/стажера. Для связи можно писать мне на почту xbakugan09@mail.ru или вконтакте https://vk.com/a_vriant . 2022.04.30 решил добавить своё резюме на github https://github.com/nagukab/WPF_resume (в разработке) , может поможет найти работу..." VerticalAlignment="Top" FontSize="10" AllowDrop="False" Padding="10,10,10,10" TextChanged="textbox_Контакты_TextChanged" VerticalScrollBarVisibility="Visible" IsReadOnly="True" HorizontalContentAlignment="Left" VerticalContentAlignment="Stretch"/>
+            <Label x:Name="lable_ФИО" Content="ФИО:" HorizontalAlignment="Left" Margin="4,41,0,0" VerticalAlignment="Top" Padding="0,0,0,0" FontSize="14"/>
+            <TextBox x:Name="textbox_ФИО" HorizontalAlignment="Left" Margin="47,40,0,0" TextWrapping="Wrap" Text="мое фио" VerticalAlignment="Top" FontSize="14" AllowDrop="False" Padding="0,-1,0,1" IsReadOnly="True"/>
+            <Label x:Name="lable_датаРождения" Content="Дата рождения:" HorizontalAlignment="Left" Margin="4,64,0,0" VerticalAlignment="Top" Padding="0,0,0,0" FontSize="14"/>
+            <TextBox x:Name="textbox_датаРождения" HorizontalAlignment="Left" Margin="113,63,0,0" TextWrapping="Wrap" Text="дата рождения" VerticalAlignment="Top" FontSize="14" AllowDrop="False" Padding="0,-1,0,1" IsReadOnly="True"/>
+            <Label x:Name="lable_телефон" Content="телефон:" HorizontalAlignment="Left" Margin="4,190,0,0" VerticalAlignment="Top" Padding="0,0,0,0" FontSize="14"/>
+            <TextBox x:Name="textbox_телефон" HorizontalAlignment="Left" Margin="132,189,0,0" TextWrapping="Wrap" Text="телефон" VerticalAlignment="Top" FontSize="14" AllowDrop="False" Padding="0,-1,0,1" TextChanged="textbox_Контакты_TextChanged" IsReadOnly="True"/>
+            <TextBox x:Name="textbox_почта" HorizontalAlignment="Left" Margin="132,211,0,0" TextWrapping="Wrap" Text="почта" VerticalAlignment="Top" FontSize="14" AllowDrop="False" Padding="0,-1,0,1" TextChanged="textbox_Контакты_TextChanged" IsReadOnly="True"/>
+            <TextBox x:Name="textbox_соцсеть" HorizontalAlignment="Left" Margin="132,233,0,0" TextWrapping="Wrap" Text="соцсеть" VerticalAlignment="Top" FontSize="14" AllowDrop="False" Padding="0,-1,0,1" TextChanged="textbox_Контакты_TextChanged" IsReadOnly="True"/>
+            <Label x:Name="lable_почта" Content="почта:" HorizontalAlignment="Left" Margin="4,212,0,0" VerticalAlignment="Top" Padding="0,0,0,0" FontSize="14"/>
+            <Label x:Name="lable_соцсеть" Content="соцсеть" HorizontalAlignment="Left" Margin="4,234,0,0" VerticalAlignment="Top" Padding="0,0,0,0" FontSize="14"/>
+            <Label x:Name="lable_адрес" Content="адрес:" HorizontalAlignment="Left" Margin="4,167,0,0" VerticalAlignment="Top" Padding="0,0,0,0" FontSize="14"/>
+            <TextBox x:Name="textbox_адрес" HorizontalAlignment="Left" Margin="132,166,0,0" TextWrapping="Wrap" Text="адрес" VerticalAlignment="Top" FontSize="14" AllowDrop="False" Padding="0,-1,0,1" TextChanged="textbox_Контакты_TextChanged" IsReadOnly="True"/>
+            <Label x:Name="lable_специальность" Content="специальность:" HorizontalAlignment="Left" Margin="4,145,0,0" VerticalAlignment="Top" Padding="0,0,0,0" FontSize="14"/>
+            <TextBox x:Name="textbox_специальность" HorizontalAlignment="Left" Margin="132,144,0,0" TextWrapping="Wrap" Text="специальность" VerticalAlignment="Top" FontSize="14" AllowDrop="False" Padding="0,-1,0,1" TextChanged="textbox_Контакты_TextChanged" IsReadOnly="True"/>
+            <Label x:Name="lable_учебноеЗавадение" Content="учебное заведение:" HorizontalAlignment="Left" Margin="4,122,0,0" VerticalAlignment="Top" Padding="0,0,0,0" FontSize="14"/>
+            <TextBox x:Name="textbox_учебноеЗаведение" HorizontalAlignment="Left" Margin="132,121,0,0" TextWrapping="Wrap" Text="Учебное заведение" VerticalAlignment="Top" FontSize="14" AllowDrop="False" Padding="0,-1,0,1" TextChanged="textbox_Контакты_TextChanged" IsReadOnly="True"/>
+            <TextBox x:Name="textbox_образование" HorizontalAlignment="Left" Margin="132,98,0,0" TextWrapping="Wrap" Text="образование" VerticalAlignment="Top" FontSize="14" AllowDrop="False" Padding="0,-1,0,1" TextChanged="textbox_Контакты_TextChanged" IsReadOnly="True"/>
+            <Label x:Name="lable_образование" Content="образование:" HorizontalAlignment="Left" Margin="4,99,0,0" VerticalAlignment="Top" Padding="0,0,0,0" FontSize="14"/>
+            <TextBox x:Name="textbox_обоМне" Margin="0,261,0,0" TextWrapping="Wrap" Text="Хочу найти работу связанную с IT/программированием, желательно язык С#. Готов к работе в качестве ученика/стажера.&#xD;&#xA;&#xD;&#xA;Пока опыт не большой, в рамках самообучения по курсам в интернете на C# в Visual Studio 2022 + написал небольшую программку на WPF для торговли на фондовом рынке через терминал quik.&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;Есть опыт сборки ПК, 3 системных блока себе сам собирал.&#xD;&#xA;&#xD;&#xA;Для связи можно писать мне на почту xbakugan09@mail.ru или вконтакте https://vk.com/a_vriant .&#xD;&#xA;2022.04.30 добавил своё написанное на C# WPF резюме на github https://github.com/nagukab/WPF_resume (в разработке, ссылка на собранный файл .exe с фотками внутри https://github.com/nagukab/WPF_resume/raw/master/bin/Debug/WPF_resume.exe или небольшая видео-демонстрация на youtube https://youtu.be/2bA6mXv7SEo) , может поможет найти работу..." VerticalAlignment="Top" AllowDrop="False" Padding="10,10,10,10" TextChanged="textbox_Контакты_TextChanged" VerticalScrollBarVisibility="Visible" IsReadOnly="True" HorizontalContentAlignment="Left" VerticalContentAlignment="Stretch"/>
             <ProgressBar x:Name="progressBar_обоМне" HorizontalAlignment="Stretch" Height="5" Margin="0,256,0,0" VerticalAlignment="Top" />
         </Grid>
-        <Grid x:Name="grid_фото" Margin="0,91,0,0" HorizontalAlignment="Stretch" Grid.Column="1">
+        <Grid x:Name="grid_фото" Margin="0,91,0,0" Grid.Column="1">
             <Image x:Name="image_foto1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Source="/Resources/foto1.jpg"/>
         </Grid>
         <Slider x:Name="slider_фото" HorizontalAlignment="Left" Margin="293,59,0,0" VerticalAlignment="Top" Width="120" AutoToolTipPlacement="TopLeft" IsSnapToTickEnabled="True" Maximum="5" Minimum="1" Value="1" TickPlacement="TopLeft" Ticks="1 2 3 4 5 6 7 8 9" ValueChanged="slider_фото_ValueChanged" Foreground="Black" GotMouseCapture="slider_фото_GotMouseCapture" Grid.Column="1" Height="24"/>
