@@ -1,22 +1,22 @@
 ﻿using System;
-using System.IO;
+using System.Collections;
+using System.Collections.Generic;
 using System.Drawing;
+using System.Globalization;
+using System.IO;
+using System.Linq;
 using System.Media;
 using System.Resources;
+using System.Text;
 using System.Threading.Tasks;
 using System.Timers;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Input;
-using System.Windows.Media.Imaging;
-using System.Collections;
-using System.Collections.Generic;
-using System.Globalization;
-using System.Linq;
-using System.Text;
 using System.Windows.Data;
 using System.Windows.Documents;
+using System.Windows.Input;
 using System.Windows.Media;
+using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
@@ -153,44 +153,20 @@ namespace WPF_резюме
             if (isLoaded)
             {
                 ResourceManager ресурс = Properties.Resources.ResourceManager;
+                Bitmap bm;
                 switch (slider_фото.Value)
                 {
-                    case 1:
-                        Bitmap bm = (Bitmap)ресурс.GetObject("foto1");
-                        BitmapSource bit = System.Windows.Interop.Imaging.CreateBitmapSourceFromHBitmap(bm.GetHbitmap(), IntPtr.Zero, Int32Rect.Empty, BitmapSizeOptions.FromEmptyOptions());
-                        image_foto1.Source = bit;
-                        break;
-                    case 2:
-                        bm = (Bitmap)ресурс.GetObject("foto2");
-                        bit = System.Windows.Interop.Imaging.CreateBitmapSourceFromHBitmap(bm.GetHbitmap(), IntPtr.Zero, Int32Rect.Empty, BitmapSizeOptions.FromEmptyOptions());
-                        image_foto1.Source = bit;
-                        break;
-                    case 3:
-                        bm = (Bitmap)ресурс.GetObject("foto3");
-                        bit = System.Windows.Interop.Imaging.CreateBitmapSourceFromHBitmap(bm.GetHbitmap(), IntPtr.Zero, Int32Rect.Empty, BitmapSizeOptions.FromEmptyOptions());
-                        image_foto1.Source = bit;
-                        break;
-                    case 4:
-                        bm = (Bitmap)ресурс.GetObject("foto4");
-                        bit = System.Windows.Interop.Imaging.CreateBitmapSourceFromHBitmap(bm.GetHbitmap(), IntPtr.Zero, Int32Rect.Empty, BitmapSizeOptions.FromEmptyOptions());
-                        image_foto1.Source = bit;
-                        break;
-
-                    case 5:
-                        bm = (Bitmap)ресурс.GetObject("foto5");
-                        bit = System.Windows.Interop.Imaging.CreateBitmapSourceFromHBitmap(bm.GetHbitmap(), IntPtr.Zero, Int32Rect.Empty, BitmapSizeOptions.FromEmptyOptions());
-                        image_foto1.Source = bit;
-                        break;
-
-                    default:
-                        bm = (Bitmap)ресурс.GetObject("foto1");
-                        bit = System.Windows.Interop.Imaging.CreateBitmapSourceFromHBitmap(bm.GetHbitmap(), IntPtr.Zero, Int32Rect.Empty, BitmapSizeOptions.FromEmptyOptions());
-                        image_foto1.Source = bit;
-                        break;
+                    case 1: bm = (Bitmap)ресурс.GetObject("foto1"); break;
+                    case 2: bm = (Bitmap)ресурс.GetObject("foto2"); break;
+                    case 3: bm = (Bitmap)ресурс.GetObject("foto3"); break;
+                    case 4: bm = (Bitmap)ресурс.GetObject("foto4"); break;
+                    case 5: bm = (Bitmap)ресурс.GetObject("foto5"); break;
+                    default: bm = (Bitmap)ресурс.GetObject("foto1"); break;
                 }
+                BitmapSource bit = System.Windows.Interop.Imaging.CreateBitmapSourceFromHBitmap(bm.GetHbitmap(), IntPtr.Zero, Int32Rect.Empty, BitmapSizeOptions.FromEmptyOptions());
+                image_foto1.Source = bit;
             }
         }
-
 
         /// <summary>
         /// событие воздействия на слайдер мышкой
