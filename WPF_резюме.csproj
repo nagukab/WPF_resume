@@ -64,6 +64,7 @@
     <Compile Include="МоиКонтакты.cs" />
     <Compile Include="МойАдрес.cs" />
     <Compile Include="МоеОбразование.cs" />
+    <Compile Include="РЕЗЮМЕ.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

@@ -1,13 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace WPF_резюме
 {
     /// <summary>
-    /// мои личные данны
+    /// мои личные данны (ФИО, дата рождения)
     /// </summary>
     internal class МоиДанные
     {
@@ -33,6 +29,13 @@ namespace WPF_резюме
         public DateTime ДатаРождения { get { return датаРождения; } }
         readonly private DateTime датаРождения;
 
+        /// <summary>
+        /// эти поля обязательно заполнить        /// 
+        /// </summary>
+        /// <param name="фамилия">фамилия обазательно !</param>
+        /// <param name="имя">имя обазательно !</param>
+        /// <param name="отчество">отчество обазательно !</param>
+        /// <param name="датаРождения">датаРождения обазательно !</param>
         public МоиДанные(string фамилия, string имя, string отчество, DateTime датаРождения)
         {
             this.фамилия = фамилия;

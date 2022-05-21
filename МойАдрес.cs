@@ -1,16 +1,24 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿
 
 namespace WPF_резюме
 {
-    /// 
+    /// <summary>
     /// адрес проживания
     /// </summary>
     internal class МойАдрес
     {
+        /// <summary>
+        /// адрес проживания
+        /// </summary>
+        /// <param name="Страна">страна проживания</param>
+        /// <param name="Город">город проживания</param>
+        public МойАдрес() { }
+        /// <summary>
+        /// адрес проживания
+        /// </summary>
+        /// <param name="Страна">страна проживания</param>
+        /// <param name="Город">город проживания</param>
+        public МойАдрес(string Страна, string Город) { this.Страна = Страна; this.Город = Город; }
         /// <summary>
         /// страна проживания
         /// </summary>
